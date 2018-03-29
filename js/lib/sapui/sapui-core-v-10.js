@@ -17,10 +17,10 @@ $.initStructure=function (libPath){
         }
 }
  
- com.sapui.initConf = function(){
+ com.sapui.initConf = function(configuration){
  		var filePath = {}
-		for (var j = 0; j < conf.modules.length; j++){
-			 var mod = conf.modules[j];
+		for (var j = 0; j < configuration.modules.length; j++){
+			 var mod = configuration.modules[j];
 			 if (mod.active) {
 			 	for( var k = 0; k < mod.src.length; k++) {
 					filePath  = mod.rootPath + mod.src[k]
@@ -32,5 +32,22 @@ $.initStructure=function (libPath){
 
 		}
 }
+$.conf= function(config){
+	console.log(config.Application)
+}
+$.makeAjaxCall =function (url, methodType){
+   var xhr = new XMLHttpRequest();
+   xhr.open(methodType, url, true);
+   xhr.send();
+   xhr.onreadystatechange = function(){
+     if (xhr.readyState === 4){
+        if (xhr.status === 200){
+           var resp = xhr.responseText;
+           $.conf(JSON.parse(resp));
+        }  
+        
+     }
+  }
+}
 
-$.initConf()
+$.initConf(conf)
