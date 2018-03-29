@@ -1,0 +1,49 @@
+cal{
+    width: 200px;
+    height: 160px;
+    border: 1px solid #FF9800;
+    display: block;
+}
+cal screen{
+    width: 100%;
+    height: 30px;
+    display: block;
+    background: black;
+    color: #fff;
+}
+
+cal operators{
+    width: 100%;
+    display: block;
+}
+cal operators op{
+    color:  red;
+    background: orange;
+    width: 17.4%;
+    display: inline-block;
+    text-align:  center;
+    margin: 1px;
+}
+calc digits{    
+    width: 100%;
+    display: block;
+    }
+    
+cal digits dig{
+    color:  black;
+    background: lightblue;
+    width: 30%;
+    display: inline-block;
+    text-align:  center;
+    margin: 2px;
+    padding: 0px;
+    border:  0px;
+    cursor: pointer;
+}
+cal digits dig[event]
+    {background: crimson;}
+
+cal digits dig[event]:hover
+    {background: #e87780;}
+
+cal digits dig:hover{background: #2196F3}

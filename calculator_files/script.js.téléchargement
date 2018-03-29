@@ -1,0 +1,91 @@
+"use strict";
+var com = {};
+com["sapui"] = {};
+var calc=com.sapui.calculator = {};
+calc.screen= 0;
+
+calc.clear= function(){
+	this.screen = 0;
+	};
+
+var mem = calc.mem={};
+mem.history={pv2:0,pv1:0,v:0}
+mem.mplus=function(valueToSave){ 
+    this.pv2=this.pv1
+    this.pv1=this.v
+    this.v+=valueToSave
+	};
+mem.mminus=function(valueToSave){
+	this.pv2=this.pv1
+    this.pv1=this.v
+    this.v-=valueToSave
+	};
+mem.memshow=function(){
+	calc.screen = this.v 
+	};
+
+var ops = calc.ops={};
+ops.multi=function (v1){
+    calc.screen *= v1
+    }
+ops.divid=function (v1){
+    calc.screen /= v1
+	}
+ops.add=function (v1){
+    this.screen += v1
+	}
+ops.sub=function (v1){
+    calc.screen -= v1
+	}
+
+
+/*
+var multi =calc.multi =   function (v1,v2) {
+	return v1*v2
+};
+var add = calc.add = function (v1,v2) {
+	return v1+v2
+};
+var sub=function (v1,v2) {
+	return v1-v2
+};
+var divid=function (v1,v2) {
+	return v1/v2
+};
+
+var result  = 24;
+result  =  divid (result , 3);
+//for (var i=1; i<=50; i++) { t.push (i) };
+
+var calc = com.sapui.calculator;
+calc.screen = 0;
+calc.memory = 0;
+calc.divid = divid;
+calc.sub = sub;
+
+
+function TableCalss(nbrLegs, size, color, material){
+	this.nbr = nbrLegs; 
+	this.size = size; 
+	this.color = color; 
+	this.material = material ;
+	this.showProperty = function () {
+		console.log(this.color, this.material, "table with",this.nbr, "legs"); 
+	}
+};
+*/
+function TableClass(nbrLegs, size, color, material){
+	this.nbr = nbrLegs; 
+	this.size = size; 
+	this.color = color; 
+	this.material = material ;
+};
+
+TableClass.prototype = {
+	show: function () {
+		console.log(this.color, this.material, "table with",this.nbr, "legs", this)
+}
+}
+
+
+var table = new TableClass(4,5,"blue", "wood");
