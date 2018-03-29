@@ -1,4 +1,5 @@
 "use strict";
+
 var respJson;
 function makeAjaxCall(url, methodType){
    var xhr = new XMLHttpRequest();
@@ -23,3 +24,5 @@ function makeAjaxCall(url, methodType){
 var URL = "https://api.github.com/users/btford";
 makeAjaxCall(URL, "GET");
 console.log (respJson);
+
+
