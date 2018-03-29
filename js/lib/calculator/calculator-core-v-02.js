@@ -1,5 +1,7 @@
 //all core behaviors of a calculator
 
+// comment to test for git v1
+
 "use strict";
 $.initStructure ("com.sapui.calculator")
 var calc = $.calculator;
